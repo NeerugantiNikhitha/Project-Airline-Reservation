@@ -1,0 +1,23 @@
+<div class="container">
+    <div>
+        <a href="/search"><img src="assets/img/airline-logo.jpg" ></a>
+    </div>
+
+<div class="airline">
+    <b class="head">Airline Reservation</b>   
+</div> 
+
+<div *ngIf="userLoggedIn==1" class="navigate">
+   <b style="margin-right: 1%;">Hello {{userName}}!</b><button (click)="loadMyProfile()" style="margin-right: 1%;">My Tickets</button> <button (click)="logout()">Logout</button>
+</div>
+
+<div class="button_class" *ngIf="userLoggedIn==0" class="navigate">
+<b style="margin-right: 1%;">Hello {{userName}}!</b><button (click)="loadRegister()" style="margin-right: 1%;" >Register</button> <button (click)="loadLogin()" >Login</button>
+</div>
+
+<div *ngIf="userLoggedIn==-1" class="navigate">
+    <b style="margin-right: 1%;">Hello {{userName}}!</b> <button (click)="logout()">Logout</button>
+ </div>
+   
+</div>
+<router-outlet></router-outlet>
